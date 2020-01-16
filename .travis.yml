@@ -1,7 +1,7 @@
 language: java
 jdk:
-  - oraclejdk8
   - openjdk8
+  - openjdk11
 
 env:
   global:
@@ -20,7 +20,7 @@ services:
   - docker  
 before_install:
   - docker pull bgruening/galaxy-stable:$GALAXY_VERSION
-  - docker run -d -p 80:80 -e GALAXY_CONFIG_MASTER_API_KEY=$GALAXY_APIKEY bgruening/galaxy-stable:$GALAXY_VERSION
+  - docker run --rm --name galaxy -d -p 80:80 -e GALAXY_CONFIG_MASTER_API_KEY=$GALAXY_APIKEY bgruening/galaxy-stable:$GALAXY_VERSION
   - docker ps
   - sleep 180
 install:

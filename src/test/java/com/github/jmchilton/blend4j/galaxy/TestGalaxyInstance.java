@@ -51,8 +51,8 @@ public class TestGalaxyInstance {
       
       //buildTestTools(galaxyProperties, bootStrapper.getPath());
       
-      testApiKey = adminUser.getApiKey();
-      testUrl = String.format("http://localhost/", port);
+      testApiKey = "admin";
+      testUrl = "http://localhost/";
       
       //galaxyDaemon = bootStrapper.run(galaxyProperties, galaxyData);
       //galaxyDaemon.waitForUp();
