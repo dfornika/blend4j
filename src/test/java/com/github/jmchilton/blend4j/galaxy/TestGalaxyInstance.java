@@ -31,8 +31,8 @@ public class TestGalaxyInstance {
       if(Boolean.getBoolean(System.getProperty("galaxy.bootstrap.github", "false"))){
         downloadProperties = DownloadProperties.wgetGithubMaster();
       }
-      final BootStrapper bootStrapper = new BootStrapper(downloadProperties);
-      bootStrapper.setupGalaxy();
+      // final BootStrapper bootStrapper = new BootStrapper(downloadProperties);
+      //bootStrapper.setupGalaxy();
       final GalaxyProperties galaxyProperties = 
         new GalaxyProperties()
               .assignFreePort()
@@ -49,13 +49,13 @@ public class TestGalaxyInstance {
       galaxyProperties.setAppProperty("tool_dependency_dir", "tool_dependencies");
       final int port = galaxyProperties.getPort();
       
-      buildTestTools(galaxyProperties, bootStrapper.getPath());
+      //buildTestTools(galaxyProperties, bootStrapper.getPath());
       
       testApiKey = adminUser.getApiKey();
-      testUrl = String.format("http://localhost:%d/", port);
+      testUrl = String.format("http://localhost/", port);
       
-      galaxyDaemon = bootStrapper.run(galaxyProperties, galaxyData);
-      galaxyDaemon.waitForUp();
+      //galaxyDaemon = bootStrapper.run(galaxyProperties, galaxyData);
+      //galaxyDaemon.waitForUp();
     }
   }
 
